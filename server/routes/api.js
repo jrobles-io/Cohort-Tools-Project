@@ -1,15 +1,31 @@
 const express = require('express');
 const router = express.Router();
-const cohorts = require("../cohorts.json")
-const students = require("../students.json")
-/* GET home page. */
-router.get('/cohorts', function(req, res, next) {
-  res.json(cohorts);
-});
+const Cohort = require("../models/Cohort.model"); 
+const Student = require("../models/Student.model"); 
 
-router.get('/students', function(req, res, next) {
-    res.json(students);
-});
+router.get("/cohorts", (req, res) => {
+    Cohort.find({})
+      .then((cohorts) => {
+        console.log("Retrieved cohorts ->", cohorts);
+        res.json(cohorts);
+      })
+      .catch((error) => {
+        console.error("Error while retrieving cohorts ->", error);
+        res.status(500).json({ error: "Failed to retrieve cohorts" });
+      });
+  });
 
+
+  router.get("/students", (req, res) => {
+    Student.find({})
+      .then((students) => {
+        console.log("Retrieved students ->", students);
+        res.json(students);
+      })
+      .catch((error) => {
+        console.error("Error while retrieving students ->", error);
+        res.status(500).json({ error: "Failed to retrieve students" });
+      });
+  });
 
 module.exports = router;
