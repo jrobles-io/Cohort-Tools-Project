@@ -9,9 +9,10 @@ const mongoose = require("mongoose");
 // Importing route modules
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
-var authRouter = require('./routes/auth')
-var apiRouter = require('./routes/api')
+var authRouter = require('./routes/auth');
+var apiRouter = require('./routes/api');
 var docsRouter = require('./routes/docs');
+
 
 // Create a new express instance
 var app = express();

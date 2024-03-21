@@ -7,13 +7,13 @@ const studentSchema = new Schema({
   firstName: String,
   lastName: String,
   email: String,
-  phone: Number,
+  phone: String,
   linkedinUrl: String,
   languages: Array,
   program: String,
   background: String,
   image: String,
-  cohort: Number,
+  cohort: {type: Schema.Types.ObjectId, ref: 'Cohort' },
   projects: Array,
 });
 

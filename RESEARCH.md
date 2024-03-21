@@ -16,3 +16,5 @@ General Knowledge:
 Middleware:
  
  Think of middleware as a series of steps or checkpoints that the request goes through before reaching its final destination. Each middleware function has access to the request object, the response object, and the next middleware function in the application's request-response cycle.
+
+Use Mongoose to connect your Express app to the MongoDB database:
