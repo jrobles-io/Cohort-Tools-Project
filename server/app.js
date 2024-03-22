@@ -45,4 +45,23 @@ app.use('/auth', authRouter);
 app.use('/api', apiRouter);
 app.use('/docs', docsRouter);
 
+//Establish Protected Routes
+
+// require("./config")(app);
+
+// const allRoutes = require("./routes");
+// app.use("/api", allRoutes);
+
+// const projectRouter = require("./routes/project.routes");
+// app.use("/api", isAuthenticated, projectRouter);
+
+// const taskRouter = require("./routes/task.routes");
+// app.use("/api", isAutheticated, taskRouter);
+
+// const authRouter = require("./routes/auth.routes");
+// app.use("/auth", authRouter);
+
+// require("./error-handling")(app);
+
+
 module.exports = app;
